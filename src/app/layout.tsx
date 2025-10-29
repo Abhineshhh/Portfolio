@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Backend Developer | Terminal Portfolio",
+  title: "Abhinesh | Portfolio",
   description: "Interactive terminal-based portfolio of a backend engineer specializing in scalable systems and APIs",
 };
 
