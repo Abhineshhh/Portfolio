@@ -1,0 +1,514 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #00ff00;
+  --neon-cyan: #00ffff;
+  --neon-purple: #a855f7;
+  --neon-green: #00ff00;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--foreground);
+  font-family: 'Courier New', monospace;
+  overflow-x: hidden;
+}
+
+/* Mobile viewport height fix */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Animated gradient background */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Custom scrollbar for terminal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffff 0%, #a855f7 100%);
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
+}
+
+/* Terminal container with animated border */
+.terminal-container {
+  animation: terminalAppear 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+@keyframes terminalAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.border-glow {
+  background: linear-gradient(90deg, 
+    transparent,
+    rgba(0, 255, 255, 0.3),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: borderGlowAnimation 3s linear infinite;
+}
+
+@keyframes borderGlowAnimation {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Neon text effect */
+.neon-text {
+  text-shadow: 
+    0 0 5px rgba(0, 255, 255, 0.8),
+    0 0 10px rgba(0, 255, 255, 0.6),
+    0 0 15px rgba(0, 255, 255, 0.4),
+    0 0 20px rgba(0, 255, 255, 0.2);
+  animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 
+      0 0 5px rgba(0, 255, 255, 0.8),
+      0 0 10px rgba(0, 255, 255, 0.6),
+      0 0 15px rgba(0, 255, 255, 0.4),
+      0 0 20px rgba(0, 255, 255, 0.2);
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+  animation: glitch 5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitchTop 3s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch-text::after {
+  animation: glitchBottom 2.5s infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchTop {
+  0%, 94%, 96%, 98%, 100% {
+    transform: translate(0);
+  }
+  95% {
+    transform: translate(5px, -5px);
+  }
+  97% {
+    transform: translate(-5px, 5px);
+  }
+  99% {
+    transform: translate(3px, 2px);
+  }
+}
+
+@keyframes glitchBottom {
+  0%, 94%, 96%, 98%, 100% {
+    transform: translate(0);
+  }
+  95% {
+    transform: translate(-5px, 5px);
+  }
+  97% {
+    transform: translate(5px, -5px);
+  }
+  99% {
+    transform: translate(-3px, -2px);
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
+}
+
+/* Pulse animation (slower) */
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s ease-in-out infinite;
+}
+
+/* Shake animation for errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Blink cursor */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Shimmer effect for project cards */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+/* Command card hover effects */
+.command-card {
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Skill tag animations */
+.skill-tag {
+  animation: fadeIn 0.3s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Project card 3D effect */
+.project-card {
+  transform-style: preserve-3d;
+}
+
+/* Skill category animation */
+.skill-category {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Typing text effect */
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(40);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Terminal body custom scrollbar */
+.terminal-body.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-body.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.terminal-body.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00ffff, #a855f7);
+  border-radius: 10px;
+}
+
+/* Glow on hover for links */
+a {
+  position: relative;
+}
+
+/* Matrix rain background effect */
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Floating particles */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: #fff;
+}
+
+/* Focus states */
+input:focus,
+button:focus {
+  outline: 2px solid rgba(0, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Prefer focus-visible so only keyboard users see the outline */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(0, 255, 255, 0.9);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(0, 196, 167, 0.12);
+}
+
+/* Ensure anchor focus is visible even when no text is present (icon-only links) */
+a[aria-label]:focus-visible {
+  border-radius: 0.5rem;
+}
+
+/* Remove border from terminal input */
+.terminal-body input {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.terminal-body input:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ASCII Art Animations */
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.2;
+    filter: blur(20px);
+  }
+  50% { 
+    opacity: 0.4;
+    filter: blur(25px);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes ascii-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ascii-art-container {
+  background: linear-gradient(
+    90deg,
+    #10b981,
+    #06b6d4,
+    #8b5cf6,
+    #06b6d4,
+    #10b981
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: ascii-gradient 8s ease infinite;
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(6, 182, 212, 0.8),
+    transparent
+  );
+  animation: scan-line 4s linear infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 1s ease-out forwards;
+}
+
+/* RGB Glitch Effect */
+@keyframes rgb-glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  33% {
+    transform: translate(-2px, 2px);
+  }
+  66% {
+    transform: translate(2px, -2px);
+  }
+}
