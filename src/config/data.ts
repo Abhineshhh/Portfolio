@@ -7,7 +7,7 @@ export const PERSONAL_INFO = {
   role: 'Backend Developer',
   specialization: 'Java & Spring Boot Specialist',
   email: 'jhaabhinesh977@gmail.com',
-  website: 'https://resume.abhineshhh.me/cv.pdf',
+  website: 'https://resume.abhineshhh.me',
   linkedin: 'https://linkedin.com/in/abhineshjha',
   linkedinUsername: 'abhineshjha',
   github: 'https://github.com/Abhineshhh',
@@ -126,7 +126,7 @@ export const CONTACT_INFO: ContactInfo[] = [
     icon: 'website', 
     label: 'Website', 
     value: 'resume.abhineshhh.me', 
-    link: 'https://resume.abhineshhh.me/cv.pdf', 
+    link: 'https://resume.abhineshhh.me', 
     color: 'green' 
   },
   { 
@@ -255,9 +255,9 @@ export const RESUME_LINKS = [
   },
   { 
     icon: 'resume', 
-    name: 'Resume (PDF)', 
-    desc: 'Download my resume (PDF)', 
-    link: 'https://resume.abhineshhh.me/cv.pdf', 
+    name: 'Resume', 
+    desc: 'View my resume', 
+    link: 'https://resume.abhineshhh.me', 
     color: 'green' 
   },
   { 

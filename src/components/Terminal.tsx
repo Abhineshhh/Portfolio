@@ -122,10 +122,10 @@ export default function Terminal() {
                   </a>
 
                   <a
-                    href="https://resume.abhineshhh.me/cv.pdf"
+                    href="https://resume.abhineshhh.me"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Resume (PDF) — opens in new tab"
+                    aria-label="Resume — opens in new tab"
                     className="px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold hover:scale-105 transition-all"
                     style={{
                       backgroundColor: theme.colors.primary,

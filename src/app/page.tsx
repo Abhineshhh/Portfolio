@@ -2,6 +2,7 @@
 
 import Terminal from '@/components/Terminal';
 import MatrixBackground from '@/components/MatrixBackground';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 export default function Home() {
   return (
@@ -11,7 +12,9 @@ export default function Home() {
 
       {/* Main terminal - positioned above background */}
       <div className="relative z-10 w-full">
-        <Terminal />
+        <ErrorBoundary>
+          <Terminal />
+        </ErrorBoundary>
       </div>
     </main>
   );

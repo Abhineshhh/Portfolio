@@ -27,115 +27,138 @@ export const themes: Record<string, Theme> = {
     name: "Cyberpunk",
     description: "Neon-soaked future with cyan and magenta vibes",
     colors: {
-      primary: "#00e5ff", // refined cyan
-      secondary: "#ff00ff", // magenta
-      accent: "#00c4a7", // teal accent
-      background: "#0a0e27",
-      text: "#e0e0e0",
-      border: "#00ffff",
-      glow: "#00ffff",
-      success: "#00ff00",
-      warning: "#ffff00",
-      error: "#ff0000",
+      primary: "#00f5ff", // bright electric cyan
+      secondary: "#ff00aa", // vivid magenta
+      accent: "#00ffc8", // bright teal
+      background: "#14182b", // lighter midnight for better visibility
+      text: "#e8f4f8", // soft white with cyan tint
+      border: "#00d4ff",
+      glow: "#00f5ff",
+      success: "#00ff88",
+      warning: "#ffd700",
+      error: "#ff2e63",
     },
     effects: {
-      cardBg: "rgba(10, 14, 39, 0.6)",
-      cardBorder: "rgba(0, 229, 255, 0.18)",
-      inputBg: "rgba(0, 0, 0, 0.32)",
-      promptColor: "#00e5ff",
-      cursorColor: "#00e5ff",
+      cardBg: "rgba(20, 24, 43, 0.65)",
+      cardBorder: "rgba(0, 245, 255, 0.25)",
+      inputBg: "rgba(25, 30, 50, 0.5)",
+      promptColor: "#00f5ff",
+      cursorColor: "#ff00aa",
     },
   },
   matrix: {
     name: "Matrix",
-    description: "Classic green-on-black hacker aesthetic",
+    description: "Deep terminal green with phosphor glow",
     colors: {
-      primary: "#00ff41", // matrix green
-      secondary: "#008f11",
-      accent: "#00ff41",
-      background: "#000000",
-      text: "#00ff41",
-      border: "#00ff41",
-      glow: "#00ff41",
+      primary: "#39ff14", // neon green
+      secondary: "#00ff41", // matrix green
+      accent: "#0dff00", // bright lime
+      background: "#0d1117", // dark terminal
+      text: "#c9f0d6", // soft green tint
+      border: "#1f6f3e",
+      glow: "#39ff14",
       success: "#00ff41",
-      warning: "#ffaa00",
-      error: "#ff0000",
+      warning: "#d4ff00",
+      error: "#ff3131",
     },
     effects: {
-      cardBg: "rgba(0, 0, 0, 0.8)",
-      cardBorder: "rgba(0, 255, 65, 0.3)",
-      inputBg: "rgba(0, 20, 0, 0.5)",
-      promptColor: "#00ff41",
+      cardBg: "rgba(13, 17, 23, 0.65)",
+      cardBorder: "rgba(57, 255, 20, 0.3)",
+      inputBg: "rgba(18, 25, 20, 0.5)",
+      promptColor: "#39ff14",
       cursorColor: "#00ff41",
-    },
-  },
-  ocean: {
-    name: "Ocean",
-    description: "Calming deep blue waves and aqua accents",
-    colors: {
-      primary: "#00d4ff", // aqua
-      secondary: "#0080ff",
-      accent: "#40e0d0", // turquoise
-      background: "#001a33",
-      text: "#b3e5fc",
-      border: "#00d4ff",
-      glow: "#00d4ff",
-      success: "#00e676",
-      warning: "#ffab00",
-      error: "#ff1744",
-    },
-    effects: {
-      cardBg: "rgba(0, 26, 51, 0.7)",
-      cardBorder: "rgba(0, 212, 255, 0.3)",
-      inputBg: "rgba(0, 30, 60, 0.4)",
-      promptColor: "#00d4ff",
-      cursorColor: "#40e0d0",
-    },
-  },
-  sunset: {
-    name: "Sunset",
-    description: "Warm orange and purple twilight colors",
-    colors: {
-      primary: "#ff6b35", // orange
-      secondary: "#9b59b6", // purple
-      accent: "#f39c12", // golden
-      background: "#1a0a2e",
-      text: "#ffeaa7",
-      border: "#ff6b35",
-      glow: "#ff6b35",
-      success: "#00d2d3",
-      warning: "#f39c12",
-      error: "#e74c3c",
-    },
-    effects: {
-      cardBg: "rgba(26, 10, 46, 0.7)",
-      cardBorder: "rgba(255, 107, 53, 0.3)",
-      inputBg: "rgba(40, 20, 60, 0.4)",
-      promptColor: "#ff6b35",
-      cursorColor: "#9b59b6",
     },
   },
   dracula: {
     name: "Dracula",
-    description: "Popular dark theme with pink and purple",
+    description: "Elegant vampire theme with vibrant accents",
     colors: {
-      primary: "#ff79c6", // pink
-      secondary: "#bd93f9", // purple
-      accent: "#50fa7b", // green
-      background: "#282a36",
-      text: "#f8f8f2",
-      border: "#bd93f9",
+      primary: "#ff79c6", // candy pink
+      secondary: "#bd93f9", // soft purple
+      accent: "#50fa7b", // mint green
+      background: "#282a36", // lighter for better visibility
+      text: "#f8f8f2", // off-white
+      border: "#6272a4",
       glow: "#ff79c6",
       success: "#50fa7b",
-      warning: "#f1fa8c",
+      warning: "#ffb86c",
       error: "#ff5555",
     },
     effects: {
-      cardBg: "rgba(40, 42, 54, 0.8)",
-      cardBorder: "rgba(189, 147, 249, 0.3)",
+      cardBg: "rgba(40, 42, 54, 0.65)",
+      cardBorder: "rgba(189, 147, 249, 0.35)",
       inputBg: "rgba(68, 71, 90, 0.5)",
       promptColor: "#ff79c6",
-      cursorColor: "#50fa7b",
+      cursorColor: "#bd93f9",
+    },
+  },
+  nord: {
+    name: "Nord",
+    description: "Cool arctic palette with snow and ice tones",
+    colors: {
+      primary: "#88c0d0", // frost cyan
+      secondary: "#81a1c1", // polar blue
+      accent: "#8fbcbb", // ice teal
+      background: "#3b4252", // lighter polar night
+      text: "#eceff4", // snow white
+      border: "#5e81ac",
+      glow: "#88c0d0",
+      success: "#a3be8c", // aurora green
+      warning: "#ebcb8b", // aurora yellow
+      error: "#bf616a", // aurora red
+    },
+    effects: {
+      cardBg: "rgba(59, 66, 82, 0.65)",
+      cardBorder: "rgba(136, 192, 208, 0.35)",
+      inputBg: "rgba(76, 86, 106, 0.5)",
+      promptColor: "#88c0d0",
+      cursorColor: "#8fbcbb",
+    },
+  },
+  gruvbox: {
+    name: "Gruvbox",
+    description: "Warm retro palette with earthy vintage tones",
+    colors: {
+      primary: "#fe8019", // bright orange
+      secondary: "#fabd2f", // bright yellow
+      accent: "#b8bb26", // bright green
+      background: "#282828", // lighter dark background
+      text: "#ebdbb2", // light beige
+      border: "#d65d0e",
+      glow: "#fe8019",
+      success: "#b8bb26",
+      warning: "#d79921",
+      error: "#cc241d",
+    },
+    effects: {
+      cardBg: "rgba(40, 40, 40, 0.65)",
+      cardBorder: "rgba(254, 128, 25, 0.35)",
+      inputBg: "rgba(60, 56, 54, 0.5)",
+      promptColor: "#fe8019",
+      cursorColor: "#fabd2f",
+    },
+  },
+  monokai: {
+    name: "Monokai",
+    description: "Vibrant classic with balanced neon colors",
+    colors: {
+      primary: "#66d9ef", // bright cyan
+      secondary: "#a6e22e", // lime green
+      accent: "#f92672", // hot pink
+      background: "#2d2e27", // lighter charcoal
+      text: "#f8f8f2", // off-white
+      border: "#49483e",
+      glow: "#66d9ef",
+      success: "#a6e22e",
+      warning: "#fd971f",
+      error: "#f92672",
+    },
+    effects: {
+      cardBg: "rgba(45, 46, 39, 0.65)",
+      cardBorder: "rgba(102, 217, 239, 0.35)",
+      inputBg: "rgba(73, 72, 62, 0.5)",
+      promptColor: "#66d9ef",
+      cursorColor: "#a6e22e",
     },
   },
 };

@@ -30,9 +30,6 @@ Type in the terminal:
 - Tailwind CSS v4
 - React 19
 
-## Deploy
-
-Push to GitHub  Import on [Vercel](https://vercel.com)
 
 ## Contact
 
